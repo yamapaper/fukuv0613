@@ -3,7 +3,7 @@ namespace fukuv0613
     public partial class Form1 : Form
     {
         int vx = -10;
-        int vy = -20;
+        int vy = -10;
         
         public Form1()
         {
@@ -33,6 +33,10 @@ namespace fukuv0613
             {               
                 vx = -vx;                
                 label1.Left += vx;
+            }
+            if (label1.Top == mpos.X/fpos.Y && label1.Left == mpos.Y/fpos.Y)
+            {
+                label1.Text = "yamada kenta";
             }
         }
     }
