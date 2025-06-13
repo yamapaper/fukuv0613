@@ -4,9 +4,11 @@ namespace fukuv0613
     {
         int vx = -10;
         int vy = -20;
+        
         public Form1()
         {
             InitializeComponent();
+           
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -16,6 +18,9 @@ namespace fukuv0613
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            var mpos = MousePosition;
+            var fpos = PointToClient(mpos);
+            Text = $"{mpos.X}, {mpos.Y} / {fpos.X}, {fpos.Y}";
             label1.Left += vx;
             label1.Top += vy;
             if (label1.Left < 0)
